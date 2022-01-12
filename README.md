@@ -1,1 +1,1 @@
-# Arthur
+# ANSYS Fluent UDF code
