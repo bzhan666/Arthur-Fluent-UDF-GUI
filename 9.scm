@@ -1,0 +1,12 @@
+(define (gui-dialog-box)
+	(define apply-cb #t)
+	(define update-cb #f)
+	(define Bzhan666 (cx-create-panel "bzhan666" apply-cb update-cb))
+	(cx-show-panel Bzhan666)
+	)
+
+(cx-add-menu "MyUDF Menu" #\y)
+(cx-add-item "MyUDF Menu" "Example Menu Option" #f #f #t #f)
+(cx-add-hitem "MyUDF Menu" "Example Submenu" #f)
+(cx-add-item "Example Submenu" "Example Submenu Option" #f #f #t #f)
+(cx-add-item "MyUDF Menu" "MyUDF Dialog Box" #\x #f #t gui-dialog-box)
