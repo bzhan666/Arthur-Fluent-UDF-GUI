@@ -6,11 +6,11 @@ DEFINE_PROPERTY(saturation_temperature,c,thread)
 	real sat_temp,sa_temp;
 	real w;
 
-	Thread *t_air = THREAD_SUB_THREAD(thread,0); /* ¸ø¶¨ÏàÓòË÷Òı£¬THREAD_SUB_THREADºê¿ÉÓÃÓÚ¼ìË÷Ïà¼¶Ïß³Ì£¨×ÓÏß³Ì£©Ö¸Õë¡£ THREAD_SUB_THREAD¾ßÓĞÁ½¸ö²ÎÊı£ºmixture_threadºÍphase_domain_index¡£ ¸Ãº¯Êı·µ»Ø¸ø¶¨phase_domain_indexµÄ½×¶Î¼¶Ïß³ÌÖ¸Õë¡£*/
+	Thread *t_air = THREAD_SUB_THREAD(thread,0); /* ç»™å®šç›¸åŸŸç´¢å¼•ï¼ŒTHREAD_SUB_THREADå®å¯ç”¨äºæ£€ç´¢ç›¸çº§çº¿ç¨‹ï¼ˆå­çº¿ç¨‹ï¼‰æŒ‡é’ˆã€‚ THREAD_SUB_THREADå…·æœ‰ä¸¤ä¸ªå‚æ•°ï¼šmixture_threadå’Œphase_domain_indexã€‚ è¯¥å‡½æ•°è¿”å›ç»™å®šphase_domain_indexçš„é˜¶æ®µçº§çº¿ç¨‹æŒ‡é’ˆã€‚*/
 	Thread *t_wv = THREAD_SUB_THREAD(thread,1);
 	Thread *t_wl = THREAD_SUB_THREAD(thread,2);
 
-	real p_wv = C_P(c,t_wv); /* ¶¨ÒåÒ»¸öË®ÕôÆøÏàµÄÑ¹Á¦²¢»ñÈ¡ */
+	real p_wv = C_P(c,t_wv); /* å®šä¹‰ä¸€ä¸ªæ°´è’¸æ°”ç›¸çš„å‹åŠ›å¹¶è·å– */
 
 	real operating_p = RP_Get_Real ("operating-pressure");
 	real vapor_p = p_wv + operating_p; // absolute pressure = static pressure + operating pressure
@@ -20,7 +20,7 @@ DEFINE_PROPERTY(saturation_temperature,c,thread)
 	{
 		sa_temp = (1723.6425/(8.05573-((double)log10((double)p_wv/133.322)))-233.08)+273.15; // Pressure in Pa to mmHg (Yaws)
 
-		sat_temp=sa_temp;  /* °Ñsa_temp¸³Öµ¸øsat_temp */
+		sat_temp=sa_temp;  /* æŠŠsa_tempèµ‹å€¼ç»™sat_temp */
 
 
 	}
