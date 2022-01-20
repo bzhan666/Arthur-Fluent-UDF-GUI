@@ -17,7 +17,3 @@
  			end_c_loop_all(c,t)
  		}
  } 
-
-	
-		 
-
