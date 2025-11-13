@@ -1,0 +1,125 @@
+! ========================================
+! Fluent C3M UDF Input File
+! 文件名: fluent_c3m_udf.inp
+! 注意: 变量名必须与代码中完全一致(小写)
+! ========================================
+
+! ========================================
+! 1. 煤质分析 (收到基, %)
+! ========================================
+fc_ar 54.1
+vm_ar 41.8
+ash_ar 1.5
+moist_ar 2.6
+f_ep_a 0.5
+
+! ========================================
+! 2. 模型开关 (true/false)
+! ========================================
+pccl_devol false
+mgas_devol true
+cpd_devol false
+fgdvc_devol false
+hptr_devol false
+pccl_moisture false
+mgas_moisture true
+pccl_2nd_pyro false
+mgas_tarcracking true
+pccl_tarcracking false
+mgas_gasif true
+pccl_gasif false
+pccl_soot_gasif false
+mgas_char_combustion true
+pccl_char_combustion false
+pccl_soot_oxidation false
+tar_oxidation true
+mgas_gas_phase_oxidation true
+mgas_wgs true
+
+! ========================================
+! 3. 水分释放
+! ========================================
+a_moisture_release 2.0e5
+e_moisture_release 7.4e7
+moisture_flux 0.001
+wg3 0.014
+
+! ========================================
+! 4. 脱挥发分 (双步)
+! ========================================
+a1_devolatilization 2.0e5
+e1_devolatilization 7.4e7
+a2_devolatilization 1.3e7
+e2_devolatilization 1.4e8
+
+! ========================================
+! 5. 焦油裂解
+! ========================================
+a_tar_cracking 1.0e8
+e_tar_cracking 1.0e8
+
+! ========================================
+! 6. 水蒸气气化
+! ========================================
+a_steam_gasification 4.93e3
+e_steam_gasification 3.18e4
+k_steam_gasification 0.0
+n_steam_gasification 1.0
+annealing_steam_gasification 1.0
+
+! ========================================
+! 7. CO2气化
+! ========================================
+a_co2_gasification 4.4e3
+e_co2_gasification 3.63e4
+k_co2_gasification 0.0
+n_co2_gasification 1.0
+annealing_co2_gasification 1.0
+
+! ========================================
+! 8. H2气化
+! ========================================
+a_h2_gasification 1.0e3
+e_h2_gasification 2.5e4
+n_h2_gasification 1.0
+annealing_h2_gasification 1.0
+
+! ========================================
+! 9. 焦炭燃烧
+! ========================================
+a_c_combustion 8710.0
+e_c_combustion 27000.0
+n_c_combustion 0.0
+annealing_c_combustion 1.0
+
+! ========================================
+! 10. 碳烟-水蒸气气化
+! ========================================
+a_soot_steam_gasification 1.0e3
+e_soot_steam_gasification 3.0e4
+k_soot_steam_gasification 0.0
+n_soot_steam_gasification 1.0
+annealing_soot_steam_gasification 1.0
+
+! ========================================
+! 11. 碳烟-CO2气化
+! ========================================
+a_soot_co2_gasification 1.0e3
+e_soot_co2_gasification 3.5e4
+k_soot_co2_gasification 0.0
+n_soot_co2_gasification 1.0
+annealing_soot_co2_gasification 1.0
+
+! ========================================
+! 12. 碳烟-H2气化
+! ========================================
+a_soot_h2_gasification 5.0e2
+e_soot_h2_gasification 2.0e4
+n_soot_h2_gasification 1.0
+annealing_soot_h2_gasification 1.0
+
+! ========================================
+! 13. 碳烟燃烧
+! ========================================
+a_soot_combustion 1.0e5
+e_soot_combustion 2.0e4
